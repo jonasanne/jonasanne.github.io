@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
-		<title>TideAPI</title>
+		<title>TidAPI</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="manifest" href="site.webmanifest">
 		<link rel="mask-icon" href="safari-pinned-tab.svg" color="#e85e00">
@@ -13,6 +13,7 @@
 		<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
 			integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:600|Roboto&display=swap" rel="stylesheet">
+		<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 	</head>
 
 	<body>
@@ -131,7 +132,7 @@
 
 					<Div class="Header-text header-size title-font">
 						<h1>
-							Welcome to TideAPI!
+							Welcome to TidAPI!
 						</h1>
 						<p class="description-font">
 							TidAPI checks the waves in Ostend for you!
@@ -144,9 +145,47 @@
 				<div class="wave">
 
 				</div>
-			</Div>
-
+			</div>
 		</Header>
+
+		<article class="featured-container container-fluid">
+			<div>
+				<header class="features">
+					<h2>Features</h2>
+					<hr class="underline">
+				</header>
+				<div class="cards">
+					<div class="card">
+						<div class="img">
+							<lottie-player src="https://assets3.lottiefiles.com/datafiles/Mj7WSkJhk4lFlHd/data.json"
+								background="transparent" speed="1" style="width: 200px; height: 200px;" loop autoplay>
+							</lottie-player>
+						</div>
+						<h3 class="card-title">Weather Report</h3>
+						<p class="card-description">Get current weather report in Ostend.</p>
+					</div>
+					<div class="card">
+						<div class="img">
+							<lottie-player src="https://assets7.lottiefiles.com/temp/lf20_nOSgK9.json"
+								background="transparent" speed="1" style="width: 200px; height: 200px;" loop autoplay>
+							</lottie-player>
+						</div>
+						<h3 class="card-title">Tides prediction</h3>
+						<p class="card-description">Official Ostend high and low tide prediction.</p>
+					</div>
+					<div class="card">
+						<div class="img">
+							<lottie-player src="https://assets8.lottiefiles.com/datafiles/ziyHbNvd6Zah54z/data.json"
+								background="transparent" speed="0.7" style="width: 200px; height: 200px;" loop autoplay>
+							</lottie-player>
+						</div>
+						<h3 class="card-title">Usability</h3>
+						<p class="card-description">Easy to use without any input.</p>
+					</div>
+				</div>
+			</div>
+
+		</article>
 	</body>
 
 </html>
