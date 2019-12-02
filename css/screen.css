@@ -527,16 +527,25 @@ hr {
     align-items: center;
     justify-content: center;
 
+
 }
+.card-img{
+    display: flex;
+    justify-content: center;
+}
+
+
+
 
 .card .card-title,
 .card-description {
     text-align: center;
 }
 
-.card:first-child img {
+/* .card:first-child img {
     margin-bottom: -50px;
-}
+} */
+
 
 
 
@@ -716,6 +725,7 @@ No media query since this is the default in mobile first design
     /* article */
     article.featured-container {
         margin-top: 250px;
+        height: 700px;
     }
 
     .features h2 {
@@ -727,10 +737,13 @@ No media query since this is the default in mobile first design
 
     .cards {
         margin-top: 50px;
-        display: flex;
-        flex-direction: row;
+        display: grid;
+        column-gap: 30px;
+        grid-template-columns:repeat(3,370px);
         justify-content: space-around;
-
+    }
+    .card{
+        grid-row: 1;
     }
 
 
