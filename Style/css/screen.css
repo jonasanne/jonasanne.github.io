@@ -2,6 +2,7 @@
 #FONTS
 \*------------------------------------*/
 
+
 /*------------------------------------*\
 #Variables
 \*------------------------------------*/
@@ -17,15 +18,15 @@
     /* shadows */
     --global-card-shadow: 2px 2px 6px #777777;
     /* borders */
-
     /* transitions */
     /* whitespace */
-
 }
+
 
 /*------------------------------------*\
 #GENERIC
 \*------------------------------------*/
+
 
 /*
     Generic: Page
@@ -50,6 +51,7 @@ html {
     box-sizing: inherit;
 }
 
+
 /*
 * Remove text-shadow in selection highlight:
 * https://twitter.com/miketaylr/status/12228805301
@@ -69,13 +71,10 @@ html {
     text-shadow: none;
 }
 
+
 /*------------------------------------*\
 #Elements
 \*------------------------------------*/
-
-
-
-
 
 
 /*
@@ -83,6 +82,7 @@ Elements: font-style
 ---
 Default font
 */
+
 .title-font {
     font-family: var(--font-title);
 }
@@ -90,6 +90,7 @@ Default font
 .description-font {
     font-family: var(--font-description);
 }
+
 
 /*
 Elements: Images
@@ -101,6 +102,7 @@ img {
     max-width: 100%;
     vertical-align: top;
 }
+
 
 /*
     Elements: typography
@@ -222,9 +224,11 @@ input:disabled {
     cursor: not-allowed;
 }
 
+
 /*------------------------------------*\
 #OBJECTS
 \*------------------------------------*/
+
 
 /*
     Objects: Row
@@ -236,6 +240,7 @@ input:disabled {
     position: relative;
     padding: 24px 24px 0;
 }
+
 
 /* size modifiers */
 
@@ -263,6 +268,7 @@ input:disabled {
     }
 }
 
+
 /*
     Objects: Container
     ---
@@ -276,6 +282,7 @@ input:disabled {
     /* 79.5 * 16px = 1272 */
     width: 100%;
 }
+
 
 /*
     Objects: section
@@ -291,6 +298,7 @@ input:disabled {
     padding-top: 8px;
 }
 
+
 /*
     Objects: List
     ---
@@ -301,6 +309,7 @@ input:disabled {
     list-style: none;
     padding: 0;
 }
+
 
 /*
     Object: Button reset
@@ -315,21 +324,18 @@ input:disabled {
     width: auto;
     overflow: visible;
     background: transparent;
-
     /* inherit font & color from ancestor */
     color: inherit;
     font: inherit;
-
     /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
     line-height: normal;
-
     /* Corrects font smoothing for webkit */
     -webkit-font-smoothing: inherit;
     -moz-osx-font-smoothing: inherit;
-
     /* Corrects inability to style clickable `input` types in iOS */
     -webkit-appearance: none;
 }
+
 
 /*
     Object: Hide accessible
@@ -348,9 +354,11 @@ input:disabled {
     border: 0;
 }
 
+
 /*------------------------------------*\
 #COMPONENTS
 \*------------------------------------*/
+
 
 /*
     Components: header
@@ -358,6 +366,7 @@ input:disabled {
     Components classes to put style header elements
 
 */
+
 .header-icon {
     height: 100px;
     width: 250px;
@@ -373,8 +382,6 @@ input:disabled {
     height: 700px;
     width: 100%;
 }
-
-
 
 div.container-fluid {
     display: flex;
@@ -425,15 +432,15 @@ div.container-fluid {
     ---
     compone classes for header div wave
 */
+
 .wave {
     position: relative;
     width: 100%;
     height: 129px;
     bottom: 25px;
     left: 0;
-    background: url(../img/wave.png);
+    background: url(../../img/wave.png);
     animation: animate 15s linear infinite;
-
 }
 
 .wave:before {
@@ -443,10 +450,9 @@ div.container-fluid {
     top: 0;
     left: 0;
     position: absolute;
-    background: url(../img/wave.png);
+    background: url(../../img/wave.png);
     opacity: 0.5;
     animation: animateReverse 15s linear infinite;
-
 }
 
 .wave:after {
@@ -460,16 +466,12 @@ div.container-fluid {
     opacity: 0.6;
     animation-delay: -5s;
     animation: animate 25s linear infinite;
-
 }
-
-
 
 @keyframes animateReverse {
     0% {
         background-position: 1350px;
     }
-
     100% {
         background-position: 0;
     }
@@ -479,11 +481,11 @@ div.container-fluid {
     0% {
         background-position: 0;
     }
-
     100% {
         background-position: 1350px;
     }
 }
+
 
 /*
     Components: article
@@ -491,6 +493,7 @@ div.container-fluid {
     article classes to put style arrticle elements
 
 */
+
 div.features {}
 
 header.features {
@@ -511,7 +514,9 @@ hr {
     margin: 0 !important;
 }
 
+
 /* cards */
+
 .cards {
     display: flex;
     flex-direction: column;
@@ -526,27 +531,128 @@ hr {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
-
 }
-.card-img{
+
+.card-img {
     display: flex;
     justify-content: center;
 }
-
-
-
 
 .card .card-title,
 .card-description {
     text-align: center;
 }
 
-/* .card:first-child img {
-    margin-bottom: -50px;
-} */
+
+/*
+    Components: footer
+    ---
+    classes to style footer
+
+*/
 
 
+/* timer */
+
+.footer-background {
+    height: 500px;
+    clip-path: polygon(0 25%, 100% 0%, 100% 100%, 0% 100%);
+    width: 100%;
+    margin-top: 50px;
+}
+
+.footer-content {
+    padding-top: 125px;
+    display: grid!important;
+    grid-template-rows: 100px 200px 70px;
+}
+
+.timer {
+    grid-row: 1;
+}
+
+.timer-detail {
+    font-size: 45px;
+    color: white;
+    text-align: center;
+}
+
+.footer-form {
+    grid-row: 2;
+    margin: auto;
+}
+
+.privacy {
+    bottom: 0;
+    grid-row: 3;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    align-items: flex-end;
+
+}
+.copyright{
+    margin: 0!important;
+}
+.contact{
+    margin: 0!important;
+
+}
+
+
+
+/* subscribe */
+
+.container-input {
+    max-width: 400px;
+    position: relative;
+    margin: auto;
+}
+
+.input-email {
+    width: 100%;
+    height: 70px;
+    width: 400px;
+    border-radius: 50px;
+    padding: 10px;
+    margin: 0;
+    border: none;
+}
+.input-email:active {
+border: var(--global-color-alpha) 2px solid;
+
+}
+
+
+.button-submit {
+    position: absolute;
+    right: 5px;
+    height: 60px;
+    width: 60px;
+    border-radius: 50px;
+    border: none;
+    top: 5px;  
+    background: var(--global-color-alpha);
+    animation: width 1s;
+    transition: width 0.7s;
+    color: white;
+}
+.message-submit{
+    margin: 0!important;
+    display: none;
+    text-align: center;
+}
+
+
+.arrow-svg {
+    max-height: 20px;
+    position: relative;
+    max-width: 20px;
+    top: 0;
+}
+.arrow-svg path{
+fill: white;
+}
 
 
 /*------------------------------------*\
@@ -554,15 +660,20 @@ hr {
 \*------------------------------------*/
 
 
-
 /*
     Utilities: color
     ---
     Utility classes to put specific colors onto elements
 */
+
 .gradient-purple-blue {
     background: rgb(126, 126, 224);
     background: linear-gradient(180deg, var(--global-color-purple) 0%, var(--global-color-blue) 100%);
+}
+
+.gradient-blue-purple {
+    background: rgb(126, 126, 224);
+    background: linear-gradient(180deg, var(--global-color-blue) 0%, var(--global-color-purple) 100%);
 }
 
 .u-color-neutral-light {
@@ -572,6 +683,7 @@ hr {
 .u-color-neutral {
     color: Gray;
 }
+
 
 /*
     Utilities: spacing
@@ -606,6 +718,7 @@ hr {
 .u-mb-xl {
     margin-bottom: 48px !important;
 }
+
 
 /*
     Utilities: max-width
@@ -648,13 +761,16 @@ hr {
     margin: 0 auto;
 }
 
+
 /*
     Utilities: container
     Utility class for max width of page
 */
+
 .container-fluid {
     max-width: 1400px;
 }
+
 
 /*
     Utilities: text
@@ -665,9 +781,11 @@ hr {
     font-size: 14px;
 }
 
+
 /*------------------------------------*\
 #MEDIA
 \*------------------------------------*/
+
 
 /*
     Media Queries
@@ -677,87 +795,80 @@ hr {
     USE THEM INLINE!
 */
 
+
 /* Extra small devices (portrait phones, less than 576px)
 No media query since this is the default in mobile first design
 */
 
+
 /* Small devices (landscape phones, 576px and up)
 */
+
 @media (min-width: 576px) {}
+
 
 /* Medium devices (tablets, 768px and up)
 
 */
-@media (min-width: 768px) {
 
+@media (min-width: 768px) {
     /* header */
     .navigation {
         display: flex;
         justify-content: flex-start;
     }
-
     .device-mockup {
         max-height: 700px;
         position: absolute;
         z-index: 100;
     }
-
-    div.container-fluid {
+    div.header-content {
         display: flex;
         height: 100%;
         flex-direction: row;
-
     }
-
     .header-size {
         width: 50%;
         height: 100%;
     }
-
     .Header-text h1 {
         font-size: 50px;
     }
-
     .Header-text p {
         font-size: 30px;
     }
-
     /* article */
     article.featured-container {
         margin-top: 250px;
         height: 700px;
     }
-
     .features h2 {
         font-size: 50px;
         width: 100%;
         text-align: center;
-
     }
-
     .cards {
         margin-top: 50px;
         display: grid;
         column-gap: 30px;
-        grid-template-columns:repeat(3,370px);
+        grid-template-columns: repeat(3, 370px);
         justify-content: space-around;
     }
-    .card{
+    .card {
         grid-row: 1;
     }
-
-
-
-
 }
+
 
 /* Large devices (landscape tablets, desktops, 992px and up)
 @media (min-width: 992px) {}
 */
 
+
 /* Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {}
 */
+
 
 /*
     Print styles.
@@ -767,7 +878,6 @@ No media query since this is the default in mobile first design
 */
 
 @media print {
-
     *,
     *:before,
     *:after {
@@ -778,20 +888,16 @@ No media query since this is the default in mobile first design
         box-shadow: none !important;
         text-shadow: none !important;
     }
-
     a,
     a:visited {
         text-decoration: underline;
     }
-
     a[href]:after {
         content: " ("attr(href) ")";
     }
-
     abbr[title]:after {
         content: " ("attr(title) ")";
     }
-
     /*
     * Don't show links that are fragment identifiers,
     * or use the `javascript:` pseudo protocol
@@ -800,17 +906,14 @@ No media query since this is the default in mobile first design
     a[href^="javascript:"]:after {
         content: "";
     }
-
     pre {
         white-space: pre-wrap !important;
     }
-
     pre,
     blockquote {
         border: 1px solid #999;
         page-break-inside: avoid;
     }
-
     /*
     * Printing Tables:
     * http://css-discuss.incutio.com/wiki/Printing_Tables
@@ -818,19 +921,16 @@ No media query since this is the default in mobile first design
     thead {
         display: table-header-group;
     }
-
     tr,
     img {
         page-break-inside: avoid;
     }
-
     p,
     h2,
     h3 {
         orphans: 3;
         widows: 3;
     }
-
     h2,
     h3 {
         page-break-after: avoid;
