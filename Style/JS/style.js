@@ -46,3 +46,38 @@ document.addEventListener('DOMContentLoaded', (event) => {
       
       
   }
+  //countdown
+  function countDown(){
+    //set date in timestamp
+    var countDownDate = new Date("Dec 20, 2019 18:00:00").getTime();
+    console.log(countDownDate);
+
+    //update every 1 sec
+    var update = setInterval(function(){
+      //today's date
+      var today = new Date().getTime();
+
+      //diffrence between date and now
+      var diff = countDownDate - today;
+
+      //covert to days,hours,minutes,seconds
+      var days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      //display
+      var timer = document.getElementById("timer-detail");
+      timer.innerHTML = days + " : " + hours + " : " + minutes + " : " + seconds;
+      
+
+      //when done
+      if (diff <= 0){
+        clearInterval(update);
+        timer.innerHTML = "We are live!";
+      }
+
+    }, 1000);
+  }
+
+  countDown();
