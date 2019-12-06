@@ -13,14 +13,16 @@
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:600|Roboto&display=swap" rel="stylesheet">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
 	<script src="Style/JS/app.js"></script>
+
 </head>
 
 <body class="c-app ">
 	<Header class="c-app-header">
 		<Div class="header-bg">
-			<nav class="c-app-navigation gradient-purple-blue">
-				<svg class="header-icon " version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+			<nav class="c-app-navigation ">
+				<svg class="header-icon" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
 					xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 200 100"
 					style="enable-background:new 0 0 200 100;" xml:space="preserve">
 					<g>
@@ -129,11 +131,30 @@
 			</nav>
 		</div>
 	</Header>
-	<article style="height: 100%; display: flex; justify-content: center;"> 
+	<article style="height: 100%;">
 		<!-- way to long svg -->
-		<div class="c-app-content" style="position: relative;">
-			
-			<div class="c-app-wave-meter">
+		<div class="c-app-content">
+			<div class="c-app-chart">
+				<canvas id="myChart"></canvas>
+			</div>
+
+			<div class="c-app-temperature-title">
+				<h1>Weather</h1>
+			</div>
+			<div class="c-app-temperature-content">
+				<div class="temperature-card">
+					<p>temperature</p>
+					<p>temperature</p>
+					<p>temperature</p>
+				</div>
+				<div class="temperature-card">
+					<p>temperature</p>
+				</div>
+				<div class="temperature-card">
+					<p>temperature</p>
+				</div>
+			</div>
+			<!-- <div class="c-app-wave-meter">
 
 			</div>
 			
@@ -143,9 +164,13 @@
 
 				<div class="c-app-water">
 
-				</div>
+				</div> -->
 
 		</div>
+
+
+
+
 	</article>
 
 </body>
