@@ -1,13 +1,4 @@
-document.addEventListener('DOMContentLoaded', (event) => {
-    console.log('dom loaded');
 
-    loadChart();
-
-
-
-
-
-});
 
 //vars
 _BaseURI = "https://www.worldtides.info/api";
@@ -30,7 +21,42 @@ function getWeatherData() {
         .then((resp) => resp.json()) //transform into json
         .then(function (result) {
             data = result['data'][0];
-            console.log(data);
+            //vars
+            city_name = document.getElementById("c-app-name-city");
+            city_temp = document.getElementById("temperature");
+            city_temp_desc = document.getElementById("temperature-desc");
+            wind_arrow = document.getElementById("svg-arrow-wind")
+            wind_direcition = document.getElementById("wind-direction");
+            feels_like = document.getElementById("feels-like-temp");
+            sunrise = document.getElementById("sunrise-time");
+            sunset = document.getElementById("sunset-time");
+            wind_speed = document.getElementById("wind-speed");
+            pressure = document.getElementById("pressure");
+            sea_level_pressure = document.getElementById("sea-level-pressure");
+            clouds = document.getElementById("clouds");
+            visibilty = document.getElementById("visibilty");
+            humidity = document.getElementById("humidity");
+
+
+            city_name.innerText = data['city_name'];
+            city_temp.innerText = data['temp'] + "°";
+            feels_like.innerText = data["app_temp"];
+            city_temp_desc.innerText = data['weather']["description"];
+            //rotate with wind direction
+            wind_arrow.setAttribute("transform", "rotate(" + data["wind_dir"] + ")");
+            wind_direcition.innerText = data["wind_cdir_full"];
+            wind_speed.innerText = data["wind_spd"] + " m/s";
+            //sunset and sunsrise
+            sunrise.innerText = data["sunrise"];
+            sunset.innerText = data["sunset"];
+
+            //details
+            pressure.innerText = data["pres"] + " mb";
+            sea_level_pressure.innerText = data["slp"] + " mb";
+            clouds.innerText = data["clouds"] + " %";
+            visibilty.innerText = data["vis"] + " km";
+            humidity.innerText = data["rh"] + " %";
+
 
 
 
@@ -43,29 +69,29 @@ function getWeatherData() {
 
 
 //Get tides data
-function getTidesData() {
-    // fetch(urlHeights)
-    //     .then((resp) => resp.json()) //transform into json
-    //     .then(function (result) {
-    //         heights = result['heights'];
-    //         //show first 15
-    //         heights = heights.slice(1, 16);
+async function getTidesData() {
+    fetch(urlHeights)
+        .then((resp) => resp.json()) //transform into json
+        .then(function (result) {
+            heights = result['heights'];
+            //show first 15
+            heights = heights.slice(1, 16);
 
-    //         // for loop
-    //         for (i in heights) {
-    //             //console.log();
-    //             heightsArray.push(heights[i]["height"]);
+            // for loop
+            for (i in heights) {
+                //console.log();
+                heightsArray.push(heights[i]["height"]);
 
-    //             const newdate = convertTimestamp(heights[i]["dt"]);
-    //             heightsDateArray.push(newdate);
-    //         }
+                const newdate = convertTimestamp(heights[i]["dt"]);
+                heightsDateArray.push(newdate);
+            }
 
 
 
-    //     })
-    //     .catch(function () {
+        })
+        .catch(function () {
 
-    //     });
+        });
 }
 
 
@@ -82,16 +108,26 @@ async function loadChart() {
             datasets: [{
                 label: 'Height Meter',
                 backgroundColor: '#0080E0',
-                borderColor: 'rgb(255, 99, 132)',
                 data: heightsArray
             }]
         },
 
         // Configuration options go here
-        options: {}
+        options: {
+            scales: {
+                yAxes: [
+                    {
+                        ticks: {
+                            beginAtZero: false
+                        }
+                    }
+                ]
+            }
+        }
     });
-
 };
+
+
 
 
 
@@ -118,12 +154,16 @@ function convertTimestamp(unix_timestamp) {
 
 getWeatherData();
 
+document.addEventListener('DOMContentLoaded', (event) => {
+    console.log('dom loaded');
+
+    loadChart();
 
 
 
 
 
-
+});
 
 
 
