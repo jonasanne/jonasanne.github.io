@@ -2,7 +2,7 @@
 
 //vars
 _BaseURI = "https://www.worldtides.info/api";
-_BaseURIWeather = "http://api.weatherbit.io/v2.0/current"
+_BaseURIWeather = "https://api.weatherbit.io/v2.0/current"
 key = "1273973a-fcc6-4a13-85d8-e2cb0f7ca880";
 keyWeather = "af7bc3a3a3054dcc85167f4a2fb5ba93";
 lat = "51.233299";
@@ -13,6 +13,9 @@ const heightsArray = [];
 const heightsDateArray = [];
 console.log(urlHeights);
 console.log(urlWeather);
+
+
+
 
 
 //get weather data
@@ -70,7 +73,8 @@ function getWeatherData() {
 
 //Get tides data
 async function getTidesData() {
-    fetch(urlHeights)
+    
+    await fetch(urlHeights)
         .then((resp) => resp.json()) //transform into json
         .then(function (result) {
             heights = result['heights'];
