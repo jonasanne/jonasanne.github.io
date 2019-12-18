@@ -3,7 +3,7 @@
 //vars
 _BaseURI = "https://www.worldtides.info/api";
 _BaseURIWeather = "https://api.weatherbit.io/v2.0/current"
-key = "4c7d9094-bf7b-493c-ba18-055b51a2124d";
+key = "76e8ecdc-2892-48b4-b3b7-26ae35c9a588";
 keyWeather = "af7bc3a3a3054dcc85167f4a2fb5ba93";
 lat = "51.233299";
 lon = "2.9333";
@@ -13,8 +13,9 @@ const heightsArray = [];
 const heightsDateArray = [];
 console.log(urlHeights);
 console.log(urlWeather);
-
-
+fahrOrCel = true;
+temp = 0;
+feel_like_temp = 0;
 
 
 
@@ -40,10 +41,13 @@ function getWeatherData() {
             visibilty = document.getElementById("visibilty");
             humidity = document.getElementById("humidity");
 
+            temp = data['temp'];
+            feel_like_temp = data['app_temp'];
+
 
             city_name.innerText = data['city_name'];
-            city_temp.innerText = data['temp'] + "°";
-            feels_like.innerText = data["app_temp"];
+            city_temp.innerText = data['temp'] + "°C";
+            feels_like.innerText = data["app_temp"] + "°C";
             city_temp_desc.innerText = data['weather']["description"];
             //rotate with wind direction
             wind_arrow.setAttribute("transform", "rotate(" + data["wind_dir"] + ")");
@@ -139,16 +143,37 @@ async function loadChart() {
 
 function LoaderAnimation() {
     setTimeout(function () {
-        var loader_div= document.getElementById("div-loader");
-        var c_app = document.getElementsByClassName("c-app-body")[0];
+        window.scrollTo(0, 0);
+
         gsap.to(".c-app-loader", {opacity : 0, duration : 1});
         gsap.to(".c-app", {opacity : 1, duration : 1});
+        gsap.to(".c-app-loader", {display : "none", duration : 1.5});
 
     }, 1000);
 
 
 
 };
+
+function AnimationFahr(){
+    var loader_div= document.getElementById("div-loader");
+    var c_app = document.getElementsByClassName('c-app')[0];
+    if (loader_div.style.opacity == 0){
+        loader_div.style.opacity = 1;
+        c_app.style.opacity = 0;
+    }
+    if(loader_div.style.display == "none"){
+        loader_div.style.display = "block";
+    }
+    setTimeout(function () {
+        window.scrollTo(0, 0);
+
+        gsap.to(".c-app-loader", {opacity : 0, duration : 1});
+        gsap.to(".c-app", {opacity : 1, duration : 1});
+        gsap.to(".c-app-loader", {display : "none", duration : 2});
+
+    }, 1000);
+}
 
 
 
@@ -169,6 +194,55 @@ function convertTimestamp(unix_timestamp) {
     return formattedTime;
 }
 
+function ConvertCelToFahr(cel){
+
+
+    if (cel.innerText == "Celcius"){
+        // vars
+        flt = document.getElementById("feels-like-temp");
+
+        //feels like temperature
+        flsFahr = (feel_like_temp * 1.8) + 32;
+        fltTotal = Math.round(flsFahr * 100) / 100 ;
+        flt.innerText = fltTotal + "°F";
+        feel_like_temp = flsFahr;
+
+
+        //normal temperature
+        Fahr = (temp * 1.8) + 32;
+        total = Math.round(Fahr * 100) / 100 ;
+        city_temp.innerText = total + "°F";
+        cel.innerText = "Fahrenheit";
+        temp = Fahr;
+
+
+        AnimationFahr();
+
+    }else if (cel.innerText == "Fahrenheit"){
+        flt = document.getElementById("feels-like-temp");
+
+        //feels like temperature
+        flsCels = (feel_like_temp - 32) / 1.8;
+        flsTotal = Math.round(flsCels * 100) / 100;
+        flt.innerText = flsTotal + "°C";
+        feel_like_temp = flsCels;
+
+
+
+        //normal temperature
+        Cels = (temp - 32) / 1.8;
+        total = Math.round(Cels * 100) / 100;
+        city_temp.innerText = total + "°C";
+        cel.innerText = "Celcius";
+        temp = Cels;
+
+        AnimationFahr();
+
+    }
+
+
+}
+
 
 
 getWeatherData();
@@ -177,13 +251,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
     console.log('dom loaded');
 
     loadChart();
-
-
-
-
-
 });
 
+window.onbeforeunload = function () {
+    window.scrollTo(0, 00);
+  }
 document.onload = LoaderAnimation();
 
 

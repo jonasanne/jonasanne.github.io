@@ -10,7 +10,7 @@
 	<link rel="mask-icon" href="safari-pinned-tab.svg" color="#e85e00">
 	<link rel="stylesheet" href="Style/css/normalize.css">
 	<link rel="stylesheet" href="Style/css/screen.css">
-	
+	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:600|Roboto&display=swap" rel="stylesheet">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.4/gsap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
@@ -156,7 +156,7 @@
 																			c-3.7,0-6.71-3.01-6.71-6.71s3.01-6.71,6.71-6.71c3.7,0,6.71,3.01,6.71,6.71S28.7,23.76,25,23.76z" />
 					</g>
 				</svg>
-				<span id="c-app-name-city" class="c-app-name-city">Ostend</span>
+				<span id="c-app-name-city" class="c-app-name-city"></span>
 			</p>
 			<div class="sun">
 				<p class="sunrise">
@@ -232,9 +232,11 @@
 
 
 		<div class="c-app-card-temperature card-design">
-			<p class="c-app-temperature" id="temperature"></p>
+			<p class="c-app-temperature" id="temperature" onclick=""></p>
 			<p class="c-app-temp-description" id="temperature-desc"></p>
 			<p class="feels-like-temp">Feels like: <span id="feels-like-temp"></span></p>
+			<button class="btn-convert" onclick="ConvertCelToFahr(this)">Celcius</button>
+
 		</div>
 
 		<div class="c-app-card-pressure card-design">

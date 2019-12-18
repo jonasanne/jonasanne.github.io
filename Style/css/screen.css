@@ -13,6 +13,7 @@
      --global-color-purple: #7E7EE5;
     --global-color-blue: #2AB8D5;
     --global-color-alpha: #0080E0;
+    --global-color-alpha-hover: rgb(13, 142, 240);
     /* fonts */
     --font-title: 'Open Sans', sans-serif;
     --font-description: 'Roboto', sans-serif;
@@ -381,17 +382,20 @@ input:disabled {
 .header-icon {
     height: 100px;
     width: 250px;
-    fill: white;
+    fill: white!important;
 }
+
 
 .navigation {
     display: flex;
     justify-content: center;
+    height: 150px;
 }
 
 .header-bg {
     height: 700px;
     width: 100%;
+    margin-bottom: 100px;
 }
 
 .Header-text {
@@ -424,7 +428,7 @@ input:disabled {
 }
 
 .device-mockup {
-    max-height: 400px;
+    max-height: 350px;
     position: absolute;
     z-index: 100;
 }
@@ -440,8 +444,9 @@ input:disabled {
     position: relative;
     width: 100%;
     height: 129px;
-    bottom: 25px;
+    bottom: 0;
     left: 0;
+    margin-top: 220px;
     background: url(../../img/wave.png);
     animation: animate 15s linear infinite;
 }
@@ -499,12 +504,13 @@ input:disabled {
 
 */
 
-div.features {}
+
 
 header.features {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 50px;
 }
 
 .features h2 {
@@ -525,17 +531,19 @@ hr {
 .cards {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .card {
-    height: 370px;
-    width: 370px;
+    height: 300px;
+    width: 300px;
     border-radius: 15px !important;
     box-shadow: var(--global-card-shadow);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-bottom: 20px;
 }
 
 .card-img {
@@ -624,7 +632,7 @@ hr {
 .input-email {
     width: 100%;
     height: 70px;
-    width: 400px;
+    width: 350px;
     border-radius: 50px;
     padding: 10px;
     margin: 0;
@@ -737,7 +745,17 @@ hr {
     ---
     compone classes for temperature design
 */
-
+/* button */
+.btn-convert{
+    background-color: var(--global-color-alpha);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+}
+.btn-convert:hover{
+    background-color: var(--global-color-alpha-hover);
+}
 
 .c-app-temperature-title {
     width: 100%;
@@ -1251,7 +1269,7 @@ No media query since this is the default in mobile first design
     }
 
     .device-mockup {
-        max-height: 700px;
+        max-height: 500px;
         position: absolute;
         z-index: 100;
     }
@@ -1291,15 +1309,20 @@ No media query since this is the default in mobile first design
     .cards {
         margin-top: 50px;
         display: grid;
-        column-gap: 30px;
-        grid-template-columns: repeat(3, 370px);
+        column-gap: 25px;
+        grid-template-columns: repeat(3, 300px);
         justify-content: space-around;
     }
 
     .card {
         grid-row: 1;
-    }
+        padding: 1rem;
 
+    }
+    .wave{
+        margin-top: 0;
+        bottom: 75px;
+    }
 
     /* app */
     .c-app-header{
@@ -1361,6 +1384,10 @@ No media query since this is the default in mobile first design
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+    .wave{
+        margin-top: 0;
+        bottom: 75px;
     }
 }
 
