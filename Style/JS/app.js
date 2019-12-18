@@ -74,28 +74,28 @@ function getWeatherData() {
 //Get tides data
 async function getTidesData() {
 
-    // await fetch(urlHeights)
-    //     .then((resp) => resp.json()) //transform into json
-    //     .then(function (result) {
-    //         heights = result['heights'];
-    //         //show first 15
-    //         heights = heights.slice(1, 16);
+    await fetch(urlHeights)
+        .then((resp) => resp.json()) //transform into json
+        .then(function (result) {
+            heights = result['heights'];
+            //show first 15
+            heights = heights.slice(1, 16);
 
-    //         // for loop
-    //         for (i in heights) {
-    //             //console.log();
-    //             heightsArray.push(heights[i]["height"]);
+            // for loop
+            for (i in heights) {
+                //console.log();
+                heightsArray.push(heights[i]["height"]);
 
-    //             const newdate = convertTimestamp(heights[i]["dt"]);
-    //             heightsDateArray.push(newdate);
-    //         }
+                const newdate = convertTimestamp(heights[i]["dt"]);
+                heightsDateArray.push(newdate);
+            }
 
 
 
-    //     })
-    //     .catch(function () {
+        })
+        .catch(function () {
 
-    //     });
+        });
 }
 
 
