@@ -1079,6 +1079,7 @@ hr {
     position: absolute;
     height: 100%;
     width: 100%;
+    height: 1000px;
     background-color: rgba(255, 255, 255, 0.9);
     z-index: 100;
     animation: opacity 1s;
@@ -1086,9 +1087,24 @@ hr {
 .c-app-loader-animation{
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 25%;
     transform: translate(-50%, -50%);
 }
+/*
+    Components: c-app scrollbar    
+    ---
+    compone classes c-app scrollbar
+*/
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--global-color-alpha);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--global-color-blue);
+    border-radius: 15px;
+  }
 
 /*------------------------------------*\
 #UTILITIES
@@ -1355,6 +1371,9 @@ No media query since this is the default in mobile first design
 /* Large devices (landscape tablets, desktops, 992px and up)
  */
 @media (min-width: 992px) {
+    .c-app-loader-animation{
+        top: 50%;
+    }
     .c-app-card-pressure {
         grid-row: 3;
         grid-column: 1/5;
