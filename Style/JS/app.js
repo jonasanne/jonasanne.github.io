@@ -3,7 +3,7 @@
 //vars
 _BaseURI = "https://www.worldtides.info/api";
 _BaseURIWeather = "https://api.weatherbit.io/v2.0/current"
-key = "1273973a-fcc6-4a13-85d8-e2cb0f7ca880";
+key = "4c7d9094-bf7b-493c-ba18-055b51a2124d";
 keyWeather = "af7bc3a3a3054dcc85167f4a2fb5ba93";
 lat = "51.233299";
 lon = "2.9333";
@@ -73,29 +73,29 @@ function getWeatherData() {
 
 //Get tides data
 async function getTidesData() {
-    
-    await fetch(urlHeights)
-        .then((resp) => resp.json()) //transform into json
-        .then(function (result) {
-            heights = result['heights'];
-            //show first 15
-            heights = heights.slice(1, 16);
 
-            // for loop
-            for (i in heights) {
-                //console.log();
-                heightsArray.push(heights[i]["height"]);
+    // await fetch(urlHeights)
+    //     .then((resp) => resp.json()) //transform into json
+    //     .then(function (result) {
+    //         heights = result['heights'];
+    //         //show first 15
+    //         heights = heights.slice(1, 16);
 
-                const newdate = convertTimestamp(heights[i]["dt"]);
-                heightsDateArray.push(newdate);
-            }
+    //         // for loop
+    //         for (i in heights) {
+    //             //console.log();
+    //             heightsArray.push(heights[i]["height"]);
+
+    //             const newdate = convertTimestamp(heights[i]["dt"]);
+    //             heightsDateArray.push(newdate);
+    //         }
 
 
 
-        })
-        .catch(function () {
+    //     })
+    //     .catch(function () {
 
-        });
+    //     });
 }
 
 
@@ -126,14 +126,29 @@ async function loadChart() {
                         }
                     }
                 ]
-            }
+            },
+            legend: {
+                display: false
+            },
+            bezierCurve: true
         }
     });
 };
 
 
 
+function LoaderAnimation() {
+    setTimeout(function () {
+        var loader_div= document.getElementById("div-loader");
+        var c_app = document.getElementsByClassName("c-app-body")[0];
+        gsap.to(".c-app-loader", {opacity : 0, duration : 1});
+        gsap.to(".c-app", {opacity : 1, duration : 1});
 
+    }, 1000);
+
+
+
+};
 
 
 
@@ -169,5 +184,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 });
 
+document.onload = LoaderAnimation();
 
 

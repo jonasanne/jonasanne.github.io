@@ -1,47 +1,56 @@
 <!doctype html>
 <html lang="en" style="height: 100%;">
 
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="x-ua-compatible" content="ie=edge">
-		<title>TidAPI App</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="manifest" href="site.webmanifest">
-		<link rel="mask-icon" href="safari-pinned-tab.svg" color="#e85e00">
-		<link rel="stylesheet" href="Style/css/normalize.css">
-		<link rel="stylesheet" href="Style/css/screen.css">
-		<link href="https://fonts.googleapis.com/css?family=Open+Sans:600|Roboto&display=swap" rel="stylesheet">
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
-		<script src="Style/JS/app.js"></script>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>TidAPI App</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="manifest" href="site.webmanifest">
+	<link rel="mask-icon" href="safari-pinned-tab.svg" color="#e85e00">
+	<link rel="stylesheet" href="Style/css/normalize.css">
+	<link rel="stylesheet" href="Style/css/screen.css">
+	
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:600|Roboto&display=swap" rel="stylesheet">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.4/gsap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+	<script src="Style/JS/app.js"></script>
+	<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+</head>
 
-	</head>
+<body class="c-app-body gradient-purple-blue" style="height: 100%; min-height: 1100px;">
+	<div class="c-app-loader" id="div-loader">
+		<lottie-player class="c-app-loader-animation" id="loader-animation" src="https://assets8.lottiefiles.com/packages/lf20_wIcwHL.json" background="transparent"
+			speed="1" style="width: 400px; height: 400px;" loop  autoplay>
+		</lottie-player>
+	</div>
 
-	<body class="c-app-body gradient-purple-blue" style="height: 100%;">
-		<Header class="header">
-			<Div class="header-bg">
-				<nav class="c-app-navigation ">
-					<svg class="header-icon" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-						xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 200 100"
-						style="enable-background:new 0 0 200 100;" xml:space="preserve">
-						<g>
-							<path class="st0" d="M44.48,14.19H10.26c-0.32,0-0.49,0.14-0.49,0.49v5.73c0,0.32,0.17,0.49,0.49,0.49h13.8v45.36
+
+	<Header class="header">
+		<Div class="header-bg">
+			<nav class="c-app-navigation ">
+				<svg class="header-icon" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+					xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 200 100"
+					style="enable-background:new 0 0 200 100;" xml:space="preserve">
+					<g>
+						<path class="st0" d="M44.48,14.19H10.26c-0.32,0-0.49,0.14-0.49,0.49v5.73c0,0.32,0.17,0.49,0.49,0.49h13.8v45.36
                                     		                        c0,0.32,0.17,0.49,0.49,0.49h5.73c0.32,0,0.46-0.14,0.46-0.49V20.87h13.74c0.32,0,0.46-0.14,0.46-0.49v-5.7
                                     		                        C44.97,14.36,44.8,14.19,44.48,14.19z" />
-							<path class="st0" d="M55.6,20.67c-0.98,0-1.81,0.35-2.51,1.04c-0.72,0.69-1.07,1.53-1.07,2.51c0,0.98,0.35,1.81,1.07,2.53
+						<path class="st0" d="M55.6,20.67c-0.98,0-1.81,0.35-2.51,1.04c-0.72,0.69-1.07,1.53-1.07,2.51c0,0.98,0.35,1.81,1.07,2.53
                                     		                        c0.69,0.69,1.53,1.04,2.51,1.04s1.81-0.35,2.51-1.04c0.69-0.72,1.04-1.56,1.04-2.53s-0.35-1.81-1.04-2.51
                                     		                        C57.41,20.99,56.57,20.67,55.6,20.67z" />
-							<path class="st0"
-								d="M58.19,33.77h-5.21c-0.32,0-0.49,0.14-0.49,0.46V66.2c0,0.32,0.17,0.49,0.49,0.49h5.21
+						<path class="st0"
+							d="M58.19,33.77h-5.21c-0.32,0-0.49,0.14-0.49,0.46V66.2c0,0.32,0.17,0.49,0.49,0.49h5.21
                                     		                        c0.32,0,0.49-0.14,0.49-0.49V34.23C58.68,33.95,58.5,33.77,58.19,33.77z" />
-							<path class="st0"
-								d="M97.61,14.16h-5.33c-0.32,0-0.46,0.17-0.46,0.49v22.78c-3.2-2.56-6.85-3.77-10.94-3.6
+						<path class="st0"
+							d="M97.61,14.16h-5.33c-0.32,0-0.46,0.17-0.46,0.49v22.78c-3.2-2.56-6.85-3.77-10.94-3.6
                                     		                        c-4.18,0.17-7.78,1.73-10.8,4.69c-3.02,2.97-4.67,6.51-4.95,10.66c-0.29,4.75,1.18,8.9,4.46,12.36c1.53,1.61,3.28,2.88,5.33,3.77
                                     		                        c2.1,0.92,4.32,1.38,6.62,1.38c0.06,0,0.14,0,0.2,0l0,0l11.29-0.06c-0.23-2.04-0.26-4.67,0.35-7.63c0.89-4.2,2.76-7.46,4.69-9.85
                                     		                        v-34.5C98.08,14.33,97.9,14.16,97.61,14.16z M91.8,50.51c-0.09,2.79-1.09,5.16-3.08,7.11c-0.2,0.2-0.43,0.4-0.63,0.58
                                     		                        c-1.87,1.58-4.06,2.36-6.54,2.36c-2.82,0-5.27-1.01-7.26-3c-2.02-2.02-3-4.46-3-7.29c0-1.24,0.2-2.39,0.58-3.48
                                     		                        c0.49-1.38,1.3-2.65,2.45-3.77c1.99-2.02,4.44-3,7.26-3c1.41,0,2.71,0.26,3.92,0.75c1.18,0.49,2.28,1.21,3.28,2.19
                                     		                        c0.37,0.37,0.72,0.75,1.01,1.15c1.32,1.73,2.02,3.72,2.07,5.96L91.8,50.51L91.8,50.51z" />
-							<path class="st0" d="M170.02,38.47c-3.02-2.97-6.62-4.52-10.77-4.69c-0.23-0.03-0.46,0-0.69,0l0,0l-11.2,0.09h-4.87
+						<path class="st0" d="M170.02,38.47c-3.02-2.97-6.62-4.52-10.77-4.69c-0.23-0.03-0.46,0-0.69,0l0,0l-11.2,0.09h-4.87
                                     		                        c-0.32,0-0.49,0.17-0.49,0.49V85.9c0,0.32,0.17,0.49,0.49,0.49h5.33c0.32,0,0.49-0.17,0.49-0.49V63.09c3,2.42,6.42,3.63,10.25,3.63
                                     		                        c4.75,0,8.76-1.73,12.01-5.18c1.53-1.64,2.71-3.51,3.48-5.62c0.81-2.16,1.12-4.44,0.95-6.77
                                     		                        C174.68,44.98,173.04,41.43,170.02,38.47z M165.84,57.51c-0.06,0.06-0.14,0.12-0.2,0.17c-1.99,1.87-4.35,2.82-7.11,2.82
@@ -49,14 +58,14 @@
                                     		                        c-1.87-1.93-2.82-4.2-2.88-6.91l0,0v-0.43c0-0.09,0-0.17,0-0.29c0.09-2.02,0.69-3.83,1.81-5.39c0.37-0.52,0.78-1.01,1.27-1.47
                                     		                        c0.75-0.72,1.56-1.32,2.42-1.79c1.44-0.75,3.02-1.15,4.75-1.15c2.82,0,5.27,1.01,7.29,3c2.02,2.04,3,4.46,3,7.32
                                     		                        C168.84,53.07,167.83,55.49,165.84,57.51z" />
-							<path class="st0"
-								d="M189.57,33.77h-5.21c-0.32,0-0.49,0.14-0.49,0.46V66.2c0,0.32,0.14,0.49,0.49,0.49h5.21
+						<path class="st0"
+							d="M189.57,33.77h-5.21c-0.32,0-0.49,0.14-0.49,0.46V66.2c0,0.32,0.14,0.49,0.49,0.49h5.21
                                     		                        c0.32,0,0.49-0.14,0.49-0.49V34.23C190.06,33.95,189.92,33.77,189.57,33.77z" />
-							<path class="st0" d="M186.98,27.73c0.98,0,1.81-0.35,2.51-1.04c0.69-0.72,1.04-1.56,1.04-2.53s-0.35-1.81-1.04-2.51
+						<path class="st0" d="M186.98,27.73c0.98,0,1.81-0.35,2.51-1.04c0.69-0.72,1.04-1.56,1.04-2.53s-0.35-1.81-1.04-2.51
                                     		                        s-1.53-1.04-2.51-1.04c-0.98,0-1.81,0.35-2.51,1.04c-0.72,0.69-1.07,1.53-1.07,2.51c0,0.98,0.35,1.81,1.07,2.53
                                     		                        C185.17,27.38,186,27.73,186.98,27.73z" />
-							<path class="st0"
-								d="M125.81,65.89L125.81,65.89h5.64c0,0,0.12-21.8-0.14-23.04c-0.49-2.48-1.44-4.46-2.88-5.93
+						<path class="st0"
+							d="M125.81,65.89L125.81,65.89h5.64c0,0,0.12-21.8-0.14-23.04c-0.49-2.48-1.44-4.46-2.88-5.93
                                     		                        c-1.3-1.32-2.97-2.25-5.01-2.74l0,0c-0.43-0.09-0.84-0.12-1.27-0.17c-0.12,0-0.23-0.03-0.35-0.03l0,0c-0.03,0-1.53,0-1.67,0
                                     		                        c-0.03,0-0.09,0-0.12,0c-0.14,0-1.01,0-1.07,0c-0.17,0-1.12,0.09-1.15,0.09h-0.03c-0.03,0-0.95,0.12-0.98,0.12
                                     		                        s-2.39,0.49-2.65,0.58c-0.52,0.17-1.01,0.35-1.53,0.55c-0.17,0.09-0.37,0.14-0.55,0.23c-0.2,0.09-0.37,0.14-0.55,0.26
@@ -123,199 +132,159 @@
                                     		                        c0.03,0,0.06,0,0.09,0c0.09,0,0.17,0,0.26,0l0,0l0,0l0,0l0,0c0.06,0,0.12,0,0.14,0h0.03l0,0c0,0,0.03,0,0.06,0h0.03l0,0l0,0l0,0
                                     		                        c0.03,0,0.03,0,0.06,0c0.17,0,0.35,0,0.55,0c-0.2,0-0.37,0-0.58,0h-0.03l0,0c0,0,0,0-0.03,0c0,0,0,0,0.03,0h0.06
                                     		                        c0.17,0,0.35,0,0.55,0c0.06,0,0.12,0,0.14,0c0.14,0,2.65,0.06,3,0.09C125.44,52.03,125.2,53.39,125.2,53.39z" />
-							<path class="st0" d="M124.6,55.55" />
-						</g>
-					</svg>
-				</nav>
-			</div>
-		</Header>
+						<path class="st0" d="M124.6,55.55" />
+					</g>
+				</svg>
+			</nav>
+		</div>
+	</Header>
 
-		<article class="c-app">
+	<article class="c-app">
 
-			<div class="c-app-header">
-				<p class="c-app-title">
-					<svg class="c-app-location-marker" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-						xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 50"
-						style="enable-background:new 0 0 50 50;" xml:space="preserve">
-						<g>
-							<path d="M25,0.55c-9.15,0-16.6,7.44-16.6,16.6c0,3.68,2.17,9.27,6.81,17.6c3.17,5.68,6.33,10.48,6.46,10.69l2.28,3.46
+		<div class="c-app-header">
+			<p class="c-app-title">
+				<svg class="c-app-location-marker" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+					xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 50"
+					style="enable-background:new 0 0 50 50;" xml:space="preserve">
+					<g>
+						<path d="M25,0.55c-9.15,0-16.6,7.44-16.6,16.6c0,3.68,2.17,9.27,6.81,17.6c3.17,5.68,6.33,10.48,6.46,10.69l2.28,3.46
 																			c0.23,0.35,0.62,0.56,1.04,0.56s0.81-0.21,1.04-0.56l2.28-3.46c0.13-0.2,3.27-4.96,6.46-10.69c4.65-8.33,6.81-13.92,6.81-17.6
 																			C41.6,7.99,34.15,0.55,25,0.55z M32.61,33.53c-3.15,5.65-6.24,10.33-6.37,10.53L25,45.95l-1.24-1.89
 																			c-0.13-0.2-3.24-4.93-6.37-10.53c-4.31-7.73-6.5-13.24-6.5-16.39c0-7.78,6.33-14.11,14.11-14.11s14.11,6.33,14.11,14.11
 																			C39.11,20.29,36.92,25.81,32.61,33.53z" />
-							<path d="M25,7.84c-5.07,0-9.2,4.13-9.2,9.2s4.13,9.2,9.2,9.2s9.2-4.13,9.2-9.2S30.07,7.84,25,7.84z M25,23.76
+						<path d="M25,7.84c-5.07,0-9.2,4.13-9.2,9.2s4.13,9.2,9.2,9.2s9.2-4.13,9.2-9.2S30.07,7.84,25,7.84z M25,23.76
 																			c-3.7,0-6.71-3.01-6.71-6.71s3.01-6.71,6.71-6.71c3.7,0,6.71,3.01,6.71,6.71S28.7,23.76,25,23.76z" />
-						</g>
-					</svg>
-					<span id="c-app-name-city" class="c-app-name-city">Ostend</span>
-				</p>
-				<div class="sun">
-					<p class="sunrise">
-						<svg class="sunrise-icon sun-icon" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-							xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 50"
-							style="enable-background:new 0 0 50 50;" xml:space="preserve">
+					</g>
+				</svg>
+				<span id="c-app-name-city" class="c-app-name-city">Ostend</span>
+			</p>
+			<div class="sun">
+				<p class="sunrise">
+					<svg class="sunrise-icon sun-icon" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+						xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 50"
+						style="enable-background:new 0 0 50 50;" xml:space="preserve">
+						<g>
 							<g>
-								<g>
-									<path d="M25.37,15.35c0.23-0.14,0.37-0.38,0.37-0.65v-4.43c0.02-0.21-0.07-0.42-0.23-0.56c-0.16-0.16-0.37-0.23-0.58-0.21
+								<path d="M25.37,15.35c0.23-0.14,0.37-0.38,0.37-0.65v-4.43c0.02-0.21-0.07-0.42-0.23-0.56c-0.16-0.16-0.37-0.23-0.58-0.21
 																c-0.04,0.02-0.07,0.02-0.09,0.03c-0.35,0.07-0.59,0.39-0.58,0.73v4.43c0,0.26,0.12,0.51,0.37,0.65
 																C24.86,15.49,25.14,15.49,25.37,15.35z" />
-									<path
-										d="M32.09,18.51c0.26,0.05,0.56-0.03,0.73-0.26l3.13-3.13c0.24-0.23,0.3-0.56,0.17-0.86c-0.14-0.3-0.45-0.45-0.77-0.42
+								<path
+									d="M32.09,18.51c0.26,0.05,0.56-0.03,0.73-0.26l3.13-3.13c0.24-0.23,0.3-0.56,0.17-0.86c-0.14-0.3-0.45-0.45-0.77-0.42
 																c-0.16,0.02-0.31,0.1-0.44,0.23l-3.13,3.15c-0.23,0.18-0.33,0.45-0.26,0.73C31.6,18.23,31.81,18.44,32.09,18.51z" />
-									<path d="M34.5,25.15c0.05,0.4,0.44,0.68,0.84,0.63h4.43c0.26,0,0.51-0.14,0.65-0.37c0.14-0.23,0.14-0.51,0-0.73
+								<path d="M34.5,25.15c0.05,0.4,0.44,0.68,0.84,0.63h4.43c0.26,0,0.51-0.14,0.65-0.37c0.14-0.23,0.14-0.51,0-0.73
 																c-0.14-0.24-0.38-0.37-0.65-0.37h-4.64C34.73,24.36,34.43,24.74,34.5,25.15z" />
-									<path d="M10.23,25.78h4.43c0.26,0,0.51-0.14,0.65-0.37c0.14-0.23,0.14-0.51,0-0.73c-0.14-0.24-0.39-0.37-0.65-0.37h-4.64
+								<path d="M10.23,25.78h4.43c0.26,0,0.51-0.14,0.65-0.37c0.14-0.23,0.14-0.51,0-0.73c-0.14-0.24-0.39-0.37-0.65-0.37h-4.64
 																c-0.4,0.05-0.7,0.44-0.63,0.84C9.44,25.55,9.81,25.83,10.23,25.78z" />
-									<path
-										d="M17.18,18.25c0.17,0.23,0.45,0.31,0.73,0.26c0.28-0.07,0.49-0.28,0.56-0.56c0.05-0.28-0.04-0.56-0.26-0.73l-3.13-3.15
+								<path
+									d="M17.18,18.25c0.17,0.23,0.45,0.31,0.73,0.26c0.28-0.07,0.49-0.28,0.56-0.56c0.05-0.28-0.04-0.56-0.26-0.73l-3.13-3.15
 																c-0.16-0.16-0.39-0.24-0.61-0.23H14.4c-0.26,0.05-0.49,0.26-0.58,0.52c-0.07,0.26,0.02,0.56,0.21,0.75L17.18,18.25z" />
-									<path d="M40.75,28.75h-9.38c0.65-1.08,1.01-2.36,1.01-3.71c0-3.94-3.15-7.12-7.03-7.31c-0.04,0-0.05-0.04-0.07-0.04
+								<path d="M40.75,28.75h-9.38c0.65-1.08,1.01-2.36,1.01-3.71c0-3.94-3.15-7.12-7.03-7.31c-0.04,0-0.05-0.04-0.07-0.04
 																c-0.09-0.02-0.16-0.04-0.23-0.04h-0.12c-0.02,0-0.05,0.02-0.07,0.02c-0.05,0-0.09,0.02-0.14,0.02c0,0.02-0.02,0.02-0.02,0.04
 																c-3.92,0.16-7.09,3.36-7.09,7.31c0,1.35,0.37,2.62,1.01,3.71H9.25c-0.49,0-0.87,0.38-0.87,0.87c0,0.49,0.38,0.87,0.87,0.87h10.81
 																h2.68h4.51h2.68h10.81c0.49,0,0.87-0.39,0.87-0.87C41.62,29.14,41.24,28.75,40.75,28.75z M20.4,28.75
 																c-0.82-1.01-1.31-2.29-1.31-3.71c0-3.25,2.62-5.88,5.86-5.91h0.12c3.24,0.03,5.84,2.68,5.84,5.91c0,1.42-0.49,2.69-1.31,3.71H20.4
 																z" />
-								</g>
-								<path
-									d="M21.7,37.18c0.2,0.2,0.51,0.2,0.71,0l1.97-1.97V40c0,0.28,0.22,0.5,0.5,0.5s0.5-0.22,0.5-0.5v-4.79l1.97,1.97
+							</g>
+							<path
+								d="M21.7,37.18c0.2,0.2,0.51,0.2,0.71,0l1.97-1.97V40c0,0.28,0.22,0.5,0.5,0.5s0.5-0.22,0.5-0.5v-4.79l1.97,1.97
 																c0.2,0.2,0.51,0.2,0.71,0c0.2-0.2,0.2-0.51,0-0.71l-2.83-2.83c0,0,0,0,0,0c-0.05-0.04-0.1-0.08-0.16-0.11
 																c-0.12-0.05-0.26-0.05-0.38,0c-0.06,0.03-0.12,0.06-0.16,0.11l-2.83,2.83C21.5,36.67,21.5,36.99,21.7,37.18z" />
-							</g>
-						</svg>
-						<span class="sunrise-time" id="sunrise-time"></span>
-					</p>
-					<p class="sunset">
-						<svg version="1.1" id="Layer_1" class="sunset-icon sun-icon" xmlns="http://www.w3.org/2000/svg"
-							xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 50"
-							style="enable-background:new 0 0 50 50;" xml:space="preserve">
+						</g>
+					</svg>
+					<span class="sunrise-time" id="sunrise-time"></span>
+				</p>
+				<p class="sunset">
+					<svg version="1.1" id="Layer_1" class="sunset-icon sun-icon" xmlns="http://www.w3.org/2000/svg"
+						xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 50"
+						style="enable-background:new 0 0 50 50;" xml:space="preserve">
+						<g>
 							<g>
-								<g>
-									<path d="M25.37,15.35c0.23-0.14,0.37-0.38,0.37-0.65v-4.43c0.02-0.21-0.07-0.42-0.23-0.56c-0.16-0.16-0.37-0.23-0.58-0.21
+								<path d="M25.37,15.35c0.23-0.14,0.37-0.38,0.37-0.65v-4.43c0.02-0.21-0.07-0.42-0.23-0.56c-0.16-0.16-0.37-0.23-0.58-0.21
 																	c-0.04,0.02-0.07,0.02-0.09,0.03c-0.35,0.07-0.59,0.39-0.58,0.73v4.43c0,0.26,0.12,0.51,0.37,0.65
 																	C24.86,15.49,25.14,15.49,25.37,15.35z" />
-									<path
-										d="M32.09,18.51c0.26,0.05,0.56-0.03,0.73-0.26l3.13-3.13c0.24-0.23,0.3-0.56,0.17-0.86c-0.14-0.3-0.45-0.45-0.77-0.42
+								<path
+									d="M32.09,18.51c0.26,0.05,0.56-0.03,0.73-0.26l3.13-3.13c0.24-0.23,0.3-0.56,0.17-0.86c-0.14-0.3-0.45-0.45-0.77-0.42
 																	c-0.16,0.02-0.31,0.1-0.44,0.23l-3.13,3.15c-0.23,0.18-0.33,0.45-0.26,0.73C31.6,18.23,31.81,18.44,32.09,18.51z" />
-									<path d="M34.5,25.15c0.05,0.4,0.44,0.68,0.84,0.63h4.43c0.26,0,0.51-0.14,0.65-0.37c0.14-0.23,0.14-0.51,0-0.73
+								<path d="M34.5,25.15c0.05,0.4,0.44,0.68,0.84,0.63h4.43c0.26,0,0.51-0.14,0.65-0.37c0.14-0.23,0.14-0.51,0-0.73
 																	c-0.14-0.24-0.38-0.37-0.65-0.37h-4.64C34.73,24.36,34.43,24.74,34.5,25.15z" />
-									<path d="M10.23,25.78h4.43c0.26,0,0.51-0.14,0.65-0.37c0.14-0.23,0.14-0.51,0-0.73c-0.14-0.24-0.39-0.37-0.65-0.37h-4.64
+								<path d="M10.23,25.78h4.43c0.26,0,0.51-0.14,0.65-0.37c0.14-0.23,0.14-0.51,0-0.73c-0.14-0.24-0.39-0.37-0.65-0.37h-4.64
 																	c-0.4,0.05-0.7,0.44-0.63,0.84C9.44,25.55,9.81,25.83,10.23,25.78z" />
-									<path
-										d="M17.18,18.25c0.17,0.23,0.45,0.31,0.73,0.26c0.28-0.07,0.49-0.28,0.56-0.56c0.05-0.28-0.04-0.56-0.26-0.73l-3.13-3.15
+								<path
+									d="M17.18,18.25c0.17,0.23,0.45,0.31,0.73,0.26c0.28-0.07,0.49-0.28,0.56-0.56c0.05-0.28-0.04-0.56-0.26-0.73l-3.13-3.15
 																	c-0.16-0.16-0.39-0.24-0.61-0.23H14.4c-0.26,0.05-0.49,0.26-0.58,0.52c-0.07,0.26,0.02,0.56,0.21,0.75L17.18,18.25z" />
-									<path d="M40.75,28.75h-9.38c0.65-1.08,1.01-2.36,1.01-3.71c0-3.94-3.15-7.12-7.03-7.31c-0.04,0-0.05-0.04-0.07-0.04
+								<path d="M40.75,28.75h-9.38c0.65-1.08,1.01-2.36,1.01-3.71c0-3.94-3.15-7.12-7.03-7.31c-0.04,0-0.05-0.04-0.07-0.04
 																	c-0.09-0.02-0.16-0.04-0.23-0.04h-0.12c-0.02,0-0.05,0.02-0.07,0.02c-0.05,0-0.09,0.02-0.14,0.02c0,0.02-0.02,0.02-0.02,0.04
 																	c-3.92,0.16-7.09,3.36-7.09,7.31c0,1.35,0.37,2.62,1.01,3.71H9.25c-0.49,0-0.87,0.38-0.87,0.87c0,0.49,0.38,0.87,0.87,0.87h10.81
 																	h2.68h4.51h2.68h10.81c0.49,0,0.87-0.39,0.87-0.87C41.62,29.14,41.24,28.75,40.75,28.75z M20.4,28.75
 																	c-0.82-1.01-1.31-2.29-1.31-3.71c0-3.25,2.62-5.88,5.86-5.91h0.12c3.24,0.03,5.84,2.68,5.84,5.91c0,1.42-0.49,2.69-1.31,3.71H20.4
 																	z" />
-								</g>
-								<path
-									d="M28.06,36.82c-0.2-0.2-0.51-0.2-0.71,0l-1.97,1.97V34c0-0.28-0.22-0.5-0.5-0.5s-0.5,0.22-0.5,0.5v4.79l-1.97-1.97
+							</g>
+							<path
+								d="M28.06,36.82c-0.2-0.2-0.51-0.2-0.71,0l-1.97,1.97V34c0-0.28-0.22-0.5-0.5-0.5s-0.5,0.22-0.5,0.5v4.79l-1.97-1.97
 																c-0.2-0.2-0.51-0.2-0.71,0c-0.2,0.2-0.2,0.51,0,0.71l2.83,2.83c0,0,0,0,0,0c0.05,0.04,0.1,0.08,0.16,0.11
 																c0.12,0.05,0.26,0.05,0.38,0c0.06-0.03,0.12-0.06,0.16-0.11l2.83-2.83C28.25,37.33,28.25,37.01,28.06,36.82z" />
-							</g>
-						</svg>
-						<span class="sunset-time" id="sunset-time"></span>
-					</p>
-				</div>
+						</g>
+					</svg>
+					<span class="sunset-time" id="sunset-time"></span>
+				</p>
+			</div>
+		</div>
+
+
+		<div class="c-app-card-temperature card-design">
+			<p class="c-app-temperature" id="temperature"></p>
+			<p class="c-app-temp-description" id="temperature-desc"></p>
+			<p class="feels-like-temp">Feels like: <span id="feels-like-temp"></span></p>
+		</div>
+
+		<div class="c-app-card-pressure card-design">
+			<div class="c-app-card-pressure-title">
+				<p class="pressure-title">Local weather reports</p>
 			</div>
 
+			<div class="c-app-card-pressure-content">
+				<div class="wind">
+					<svg class="c-app-wind-arrow" id="svg-arrow-wind" version="1.1" id="Layer_1"
+						xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+						viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
 
-			<div class="c-app-card-temperature card-design">
-				<p class="c-app-temperature" id="temperature"></p>
-				<p class="c-app-temp-description" id="temperature-desc"></p>
-				<p class="feels-like-temp">Feels like: <span id="feels-like-temp"></span></p>
-			</div>
-
-			<div class="c-app-card-pressure card-design">
-				<div class="c-app-card-pressure-title">
-					<p class="pressure-title">Local weather reports</p>
-				</div>
-
-				<div class="c-app-card-pressure-content">
-					<div class="wind">
-						<svg class="c-app-wind-arrow" id="svg-arrow-wind" version="1.1" id="Layer_1"
-							xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-							y="0px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
-
-							<path class="st0"
-								d="M23.57,2.67L8.8,17.4c-0.73,0.74-0.72,1.93,0.02,2.66c0.74,0.73,1.93,0.72,2.66-0.02L23.05,8.46v37.78
+						<path class="st0"
+							d="M23.57,2.67L8.8,17.4c-0.73,0.74-0.72,1.93,0.02,2.66c0.74,0.73,1.93,0.72,2.66-0.02L23.05,8.46v37.78
 																c0,0.9,0.73,1.63,1.63,1.63h0.63c0.9,0,1.63-0.73,1.63-1.63V8.5l11.58,11.58c0.73,0.74,1.92,0.75,2.66,0.02
 																c0.74-0.73,0.75-1.92,0.02-2.66L26.4,2.67c-0.37-0.37-0.89-0.57-1.41-0.54C24.46,2.1,23.94,2.3,23.57,2.67z" />
-						</svg>
-						<p class="wind-speed" id="wind-speed"></p>
-						<p class="wind-direction" id="wind-direction"></p>
-					</div>
-
-					<div class="local-weather">
-						<p class="local-weather-detail">Pressure: <span class="pressure" id="pressure">100</span></p>
-						<p class="local-weather-detail">Sea level pressure: <span class="sea-level-pressure" id="sea-level-pressure"> 100</span></p>
-						<p class="local-weather-detail">Clouds: <span class="clouds" id="clouds">100</span></p>
-						<p class="local-weather-detail">Visibilty: <span class="Visibilty" id="Visibilty">1.5km</span></p>
-						<p class="local-weather-detail">Humidity: <span class="humidity" id="humidity">80%</span></p>
-					</div>
+					</svg>
+					<p class="wind-speed" id="wind-speed"></p>
+					<p class="wind-direction" id="wind-direction"></p>
 				</div>
 
-
-
-
-			</div>
-
-
-
-			<!-- Chart -->
-			<div class="c-app-card-chart card-design">
-				<div class="c-app-chart">
-					<canvas id="myChart" class="canvas"></canvas>
+				<div class="local-weather">
+					<p class="local-weather-detail">Pressure: <span class="pressure" id="pressure">100</span></p>
+					<p class="local-weather-detail">Sea level pressure: <span class="sea-level-pressure"
+							id="sea-level-pressure"> 100</span></p>
+					<p class="local-weather-detail">Clouds: <span class="clouds" id="clouds">100</span></p>
+					<p class="local-weather-detail">Visibilty: <span class="Visibilty" id="Visibilty">1.5km</span></p>
+					<p class="local-weather-detail">Humidity: <span class="humidity" id="humidity">80%</span></p>
 				</div>
 			</div>
 
-		</article>
 
 
-
-		<!-- <article style="height: 100%; width: 100%;" class="container-fluid">
-			<div class="container-fluid c-app-temperature-content">
-				<h1 class=" c-app-temperature-title">
-				</h1>
-			</div>
-			<div class="c-app-temperature-cards">
-				<div class="temperature-card">
-					<p class="temperature-card-temp">39°</p>
-
-				</div>
-				<div class="temperature-card">
-					<p>pressure</p>
-					<p>Sea level pressure</p>
-					<p>test</p>
-				</div>
-
-
-
-			</div>
-
-		<div class="c-app-content">
-			<div class="c-app-chart">
-				<canvas id="myChart"></canvas>
-			</div>
-
-
-			<!-- <div class="c-app-wave-meter">
-
-			</div>
-			
-			<div class="c-app-wave">
-
-				</div>
-
-				<div class="c-app-water">
-
-				</div> -->
 
 		</div>
-		</article>
 
-	</body>
+
+
+		<!-- Chart -->
+		<div class="c-app-card-chart card-design">
+			<div class="c-app-chart">
+				<canvas id="myChart" class="canvas" style="margin-top: 50px;"></canvas>
+			</div>
+		</div>
+
+	</article>
+	</div>
+	</article>
+
+</body>
 
 </html>

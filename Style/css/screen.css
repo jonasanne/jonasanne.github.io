@@ -685,11 +685,11 @@ hr {
 } */
 
 .header {
-    max-height: 250px;
+    max-height: 150px;
 }
 
 .header-icon {
-    fill: var(--global-color-blue);
+    fill: black;
 
 }
 
@@ -788,24 +788,55 @@ hr {
 
 
 
+
+
+
+
+
 /*
     Components: c-app 
     ---
     compone classes c-app
 */
 
+
+    /* app */
+    .c-app-header{
+            grid-column: 2/12;
+        }
+        .c-app-card-temperature{
+            grid-row: 2;
+            grid-column: 2/7;
+            margin-left: 0;
+            
+        }
+        .c-app-card-pressure{
+            grid-row: 2;
+            grid-column: 7/12;
+            margin-right: 0px;
+            
+        }
+        .c-app-card-chart{
+            grid-row: 3/5;
+            grid-column: 2/12;
+            margin-right: 0;
+        }
+
+
+
 .c-app {
     background-color: var(--global-color-background);
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     height: 610px;
-    grid-template-rows: 50px 250px 250px;
+    grid-template-rows: 100px 250px 250px 250px; 
     row-gap: 15px;
     column-gap: 15px;
     margin: 0 20px;
     max-width: 1400px;
     margin: auto;
     border-radius: 10px;
+    opacity: 0;
 }
 
 .c-app-header {
@@ -816,17 +847,22 @@ hr {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-direction: column;
 }
 
 .c-app-title {
     margin: 0 !important;
     color: black;
+    text-align: center;
+    display: flex;
+    align-items: center;
 
 }
 
 .sun {
     display: flex;
     flex-direction: row;
+    justify-content: center;
 }
 
 .sun-icon {
@@ -841,7 +877,7 @@ hr {
 }
 
 .sunset {
-    margin: 0 20px 0 20px !important;
+    margin: 0 0 0 20px !important;
     display: flex;
     align-items: center;
 }
@@ -850,7 +886,7 @@ hr {
 .c-app-location-marker {
     height: 30px;
     width: 30px;
-    margin-left: 15px;
+    /* margin-left: 15px; */
     fill: black;
 }
 
@@ -863,20 +899,7 @@ hr {
 
 
 
-.c-app-card-pressure {
-    grid-row: 3;
-    grid-column: 1/5;
-    background-color: var(--global-color-card);
-    margin-left: 15px;
-}
 
-.c-app-card-chart {
-    grid-row: 2/4;
-    grid-column: 5/13;
-    background-color: var(--global-color-card);
-    margin-right: 15px;
-    /* display: flex; */
-}
 .c-app-chart{
     margin: auto!important;
 
@@ -898,18 +921,14 @@ hr {
     ---
     compone classes c-app card temperature
 */
-.c-app-card-temperature {
-    grid-row: 2;
-    grid-column: 1/5;
-    border-radius: 5px;
-    background-color: var(--global-color-card);
-    padding: 15px;
-    margin-left: 15px;
 
+.c-app-card-temperature{
+    grid-column:2/12 ;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+
 }
 
 .c-app-temperature {
@@ -932,6 +951,7 @@ hr {
 
 .feels-like-temp {
     color: black;
+    text-align: center;
 }
 
 
@@ -946,6 +966,8 @@ hr {
 */
 .c-app-card-pressure {
     border-radius: 5px;
+    grid-row: 3;
+    grid-column: 2/12;
 }
 
 .c-app-wind-arrow {
@@ -1006,6 +1028,18 @@ hr {
 }
 
 
+
+/*
+    Components: c-app card chart
+    ---
+    compone classes c-app card chart
+*/
+
+
+.c-app-card-chart{
+    grid-row: 4;
+}
+
 /*
     Components: c-app canvas
     ---
@@ -1014,6 +1048,28 @@ hr {
 
 .canvas{
     max-width: 1000px;
+}
+
+
+/*
+    Components: c-app loader    
+    ---
+    compone classes c-app loader
+*/
+
+.c-app-loader{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: 100;
+    animation: opacity 1s;
+}
+.c-app-loader-animation{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 /*------------------------------------*\
@@ -1167,7 +1223,15 @@ No media query since this is the default in mobile first design
 /* Small devices (landscape phones, 576px and up)
 */
 
-@media (min-width: 576px) {}
+@media (min-width: 576px) {
+
+    .c-app-card-temperature {
+        grid-row:2;
+    }
+    .c-app-card-pressure{
+        grid-row: 3;
+    }
+}
 
 
 /* Medium devices (tablets, 768px and up)
@@ -1176,6 +1240,10 @@ No media query since this is the default in mobile first design
 
 @media (min-width: 768px) {
 
+    .c-app-header {
+        flex-direction: row;
+        align-items: flex-end;
+    }
     /* header */
     .navigation {
         display: flex;
@@ -1231,12 +1299,71 @@ No media query since this is the default in mobile first design
     .card {
         grid-row: 1;
     }
+
+
+    /* app */
+    .c-app-header{
+        grid-column: 2/12;
+
+    }
+    .c-app-card-temperature{
+        grid-row: 2;
+        grid-column: 2/7;
+        margin-left: 0;
+        
+    }
+    .c-app-card-pressure{
+        
+        grid-column: 7/12;
+        margin-right: 0px;
+        grid-row:2;
+        
+    }
+    .c-app-card-chart{
+        grid-row: 3/5;
+        grid-column: 2/12;
+        margin-right: 0;
+    }
+
+
 }
 
 
 /* Large devices (landscape tablets, desktops, 992px and up)
-@media (min-width: 992px) {}
-*/
+ */
+@media (min-width: 992px) {
+    .c-app-card-pressure {
+        grid-row: 3;
+        grid-column: 1/5;
+        background-color: var(--global-color-card);
+        margin-left: 15px;
+    }
+    .c-app-body{
+        min-height: 0!important;
+    }
+    
+    .c-app-card-chart {
+        grid-row: 2/4;
+        grid-column: 5/13;
+        background-color: var(--global-color-card);
+        margin-right: 15px;
+        /* display: flex; */
+    }
+    .c-app-card-temperature {
+        grid-row: 2;
+        grid-column: 1/5;
+        border-radius: 5px;
+        background-color: var(--global-color-card);
+        padding: 15px;
+        margin-left: 15px;
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
 
 
 /* Extra large devices (large desktops, 1200px and up)
